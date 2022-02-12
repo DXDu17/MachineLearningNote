@@ -14,8 +14,19 @@
 
 以经验E为划分标准：
 
-1）为训练数据打标签（labeling for training data）
+1）监督学习（Supervised Learning）
+
+为训练数据打标签（labeling for training data）
 
 经验E => 训练样本和标签的集合
 
 特点：所有的经验E都是由人工采集并输入计算机的
+
+2）
+
+经验E是由计算机与环境互动获得的。
+
+计算机 => 产生行为 <= 定义这些行为的收益函数（Reward Function）
+
+改变自己的行为模式去最大化收益函数
+

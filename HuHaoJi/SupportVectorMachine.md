@@ -23,9 +23,21 @@
 
 线性可分（Linear Separable）
 
+<div align=center><img src="./images/LinearSeparable.png" width="233" height="201"/></div>
+
 线性不可分（Nonlinear Separable）
 
+<div align=center><img src="./images/NonlinearSeparable.png" width="233" height="204"/></div>
+
+3维线性可分与线性不可分：
+
+<div align=center><img src="./images/3DLinearandNonlinearSeparable.png" width="579" height="252"/></div>
+
 特征空间维度 ≥ 四维时 => 超平面（Hyperplane）
+
+特征空间是2维时：
+
+<div align=center><img src="./images/MathDef.png" width="471" height="232"/></div>
 
 用数学严格定义训练样本以及它们的标签：
 

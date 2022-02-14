@@ -45,7 +45,6 @@
 
 <div align=center><img src="./images/MathDef_1.png" width="323" height="109"/></div>
 
-
 **用数学严格的定义线性可分**
 
 线性可分的严格定义：一个训练样本集{(Xi, yi), ..., (XN, yN)}，在i=1-N线性可分，是指存在(w1, w2, b)，使得对i=1-N，有：
@@ -56,19 +55,17 @@
 
 假设：
 
-
+<div align=center><img src="./images/MathDef_3.png" width="264" height="127"/></div>
 
 如果：
 
+<div align=center><img src="./images/MathDef_4.png" width="130" height="30"/></div>
 
-$$
-Y_i=+1 \ 或 \ -1
-$$
 一个训练样本集{(Xi, yi)}，在i=1-N线性可分，是指存在(w, b)，使得对i=1-N，有：
 
+<div align=center><img src="./images/MathDef_5.png" width="162" height="29"/></div>
 
-
-总结：
+#### 总结
 
 请通过数学定义严格证明，在二分类情况下，如果一个数据集是线性可分的，即存在一个超平面将两个类别完全分开那么一定存在无数多个超平面将这两个类别完全分开。
 

@@ -74,3 +74,52 @@
 <a name="2.2"></a>
 
 ## 2.2 问题描述
+
+支持向量机算法
+
+一、解决线性可分问题；
+
+二、再将线性可分问题中获得的结论推广到线性不可分情况。
+
+#### 如何解决线性可分问题
+
+Vladimir Vapnik：在这无数多个分开各个类别的超平面中，到底哪一个最好呢？
+
+二维特征空间中的二分类问题
+
+<div align=center><img src="./images/2Dclassify.png" width="591" height="221"/></div>
+
+认为2号线比较好，实际上是对训练样本的分布有一定的假设。
+
+假设训练样本的位置在特征空间上有测量误差（认为2号线比较好的假设有很多种，这里只取其中的一种）
+
+<div align=center><img src="./images/measure_error.png" width="443" height="221"/></div>
+
+#### 基于最优化理论
+
+<div align=center><img src="./images/maximize.png" width="498" height="231"/></div>
+
+VAPNIK给出的回答
+
+<div align=center><img src="./images/maximize_1.png" width="708" height="209"/></div>
+
+使用MARGIN最大条件 => 不能唯一确定一条直线
+
+<div align=center><img src="./images/maximize_2.png" width="345" height="202"/></div>
+
+这条线在上下两个平行线的中间
+
+**支持向量机寻找的最优分类直线应满足：**
+
+（1）该直线分开了两类；
+
+（2）该直线最大化了间隔（margin）；
+
+（3）该直线处于间隔的中间，到所有支持向量距离相等。
+
+上述讨论时是基于二维特征空间的结果，在高维的特征空间中，直线将变成超平面，但以上的结论仍然是一致的。
+
+#### 思考题
+
+证明：在线性可分条件下，有且只有唯一一条直线，满足上面三个条件。
+

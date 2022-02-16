@@ -23,47 +23,47 @@
 
 线性可分（Linear Separable）
 
-<div align=center><img src="./images/LinearSeparable.png" width="233" height="201"/></div>
+<div align=center><img src="./images/SVM/LinearSeparable.png" width="233" height="201"/></div>
 
 线性不可分（Nonlinear Separable）
 
-<div align=center><img src="./images/NonlinearSeparable.png" width="233" height="204"/></div>
+<div align=center><img src="./images/SVM/NonlinearSeparable.png" width="233" height="204"/></div>
 
 3维线性可分与线性不可分：
 
-<div align=center><img src="./images/3DLinearandNonlinearSeparable.png" width="579" height="252"/></div>
+<div align=center><img src="./images/SVM/3DLinearandNonlinearSeparable.png" width="579" height="252"/></div>
 
 特征空间维度 ≥ 四维时 => 超平面（Hyperplane）
 
 特征空间是2维时：
 
-<div align=center><img src="./images/MathDef.png" width="474" height="232"/></div>
+<div align=center><img src="./images/SVM/MathDef.png" width="474" height="232"/></div>
 
 用数学严格定义训练样本以及它们的标签：
 
 假设我们有N个训练样本和它们的标签
 
-<div align=center><img src="./images/MathDef_1.png" width="323" height="109"/></div>
+<div align=center><img src="./images/SVM/MathDef_1.png" width="323" height="109"/></div>
 
 **用数学严格的定义线性可分**
 
 线性可分的严格定义：一个训练样本集{(Xi, yi), ..., (XN, yN)}，在i=1-N线性可分，是指存在(w1, w2, b)，使得对i=1-N，有：
 
-<div align=center><img src="./images/MathDef_2.png" width="327" height="76"/></div>
+<div align=center><img src="./images/SVM/MathDef_2.png" width="327" height="76"/></div>
 
 **用向量的形式来定义线性可分**
 
 假设：
 
-<div align=center><img src="./images/MathDef_3.png" width="263" height="127"/></div>
+<div align=center><img src="./images/SVM/MathDef_3.png" width="263" height="127"/></div>
 
 如果：
 
-<div align=center><img src="./images/MathDef_4.png" width="130" height="30"/></div>
+<div align=center><img src="./images/SVM/MathDef_4.png" width="130" height="30"/></div>
 
 一个训练样本集{(Xi, yi)}，在i=1-N线性可分，是指存在(w, b)，使得对i=1-N，有：
 
-<div align=center><img src="./images/MathDef_5.png" width="154" height="29"/></div>
+<div align=center><img src="./images/SVM/MathDef_5.png" width="154" height="29"/></div>
 
 #### 总结
 
@@ -87,25 +87,25 @@ Vladimir Vapnik：在这无数多个分开各个类别的超平面中，到底�
 
 二维特征空间中的二分类问题
 
-<div align=center><img src="./images/2Dclassify.png" width="591" height="221"/></div>
+<div align=center><img src="./images/SVM/2Dclassify.png" width="591" height="221"/></div>
 
 认为2号线比较好，实际上是对训练样本的分布有一定的假设。
 
 假设训练样本的位置在特征空间上有测量误差（认为2号线比较好的假设有很多种，这里只取其中的一种）
 
-<div align=center><img src="./images/measure_error.png" width="443" height="221"/></div>
+<div align=center><img src="./images/SVM/measure_error.png" width="443" height="221"/></div>
 
 #### 基于最优化理论
 
-<div align=center><img src="./images/maximize.png" width="498" height="231"/></div>
+<div align=center><img src="./images/SVM/maximize.png" width="498" height="231"/></div>
 
 VAPNIK给出的回答
 
-<div align=center><img src="./images/maximize_1.png" width="708" height="209"/></div>
+<div align=center><img src="./images/SVM/maximize_1.png" width="708" height="209"/></div>
 
 使用MARGIN最大条件 => 不能唯一确定一条直线
 
-<div align=center><img src="./images/maximize_2.png" width="345" height="202"/></div>
+<div align=center><img src="./images/SVM/maximize_2.png" width="345" height="202"/></div>
 
 这条线在上下两个平行线的中间
 
@@ -143,19 +143,21 @@ VAPNIK给出的回答
 
 支持向量机需要寻找的是最大化间隔（MARGIN）的超平面
 
-<div align=center><img src="./images/Def_1.png" width="339" height="87"/></div>
+<div align=center><img src="./images/SVM/Def_1.png" width="339" height="87"/></div>
 
 #### 最小化（Minimize）
 
-<div align=left><img src="./images/Def_2.png" width="258" height="45"/></div>
+<div align=left><img src="./images/SVM/Def_2.png" width="258" height="45"/></div>
 
-<div align=center><img src="./images/Def_3.png" width="286" height="170"/></div>
+<div align=center><img src="./images/SVM/Def_3.png" width="286" height="170"/></div>
 
 因此，支持向量机的问题是最小化w模的平方。
 
+
+
 #### 限制条件
 
-<div align=center><img src="./images/Def_4.png" width="338" height="42"/></div>
+<div align=center><img src="./images/SVM/Def_4.png" width="338" height="42"/></div>
 
 已知：训练样本集{(Xi, yi)}，i=1-N；
 
@@ -163,25 +165,25 @@ VAPNIK给出的回答
 
 支持向量机要找一个超平面，使它的间隔最大；离两边所有支持向量的距离相等（恰好在间隔的中间）。
 
-<div align=center><img src="./images/Def_5.png" width="233" height="186"/></div>
+<div align=center><img src="./images/SVM/Def_5.png" width="233" height="186"/></div>
 
 事实1：
 
-<div align=center><img src="./images/Def_6.png" width="405" height="71"/></div>
+<div align=center><img src="./images/SVM/Def_6.png" width="405" height="71"/></div>
 
 事实2：
 
-
+<div align=center><img src="./images/SVM/Def_7.png" width="358" height="83"/></div>
 
 点到超平面的距离公式
 
+<div align=center><img src="./images/SVM/Def_8.png" width="252" height="110"/></div>
 
-
-支持向量机优化问题推导中最难理解的部分
+**支持向量机优化问题推导中最难理解的部分**
 
 用 a 去缩放 wb
 
-
+<div align=center><img src="./images/SVM/Def_9.png" width="380" height="82"/></div>
 
 (w, b)表示的超平面和(aw, ab)表示的超平面是同一个平面。
 
@@ -189,43 +191,49 @@ VAPNIK给出的回答
 
 根据事实2，支持向量X0到超平面的距离将会变为：
 
+<div align=center><img src="./images/SVM/Def_10.png" width="209" height="57"/></div>
+
 最大化支持向量到超平面的距离，等价于最小化w的模。
 
-优化问题定义为：
+优化问题定为：
 
-之所以这样定义，是因为后续求导更方便。
+<div align=center><img src="./images/SVM/Def_11.png" width="298" height="41"/></div>
+
+之所以这样定，是因为后续求导更方便。
 
 限制条件：
 
-支持向量到超平面的距离为：
-
-非支持向量到超平面的距离一定是大于支持向量到超平面的距离的
+支持向量到超平面的距离为w模的1/2，而其他非支持向量到超平面的距离一定是大于支持向量到超平面的距离的
 
 在非支持向量上：
 
+<div align=center><img src="./images/SVM/Def_12.png" width="138" height="31"/></div>
 
+综上，支持向量机的限制条件：
 
-yi => 协调超平面的左右
+<div align=center><img src="./images/SVM/Def_13.png" width="238" height="37"/></div>
 
-​    => (w, b) 
-
-
+其中yi的作用是协调超平面的左右，让超平面一边大于1，另一边小于1。
 
 值得注意的是，上述条件中右边的1可以为任意的正数，
 
+<div align=center><img src="./images/SVM/Def_14.png" width="377" height="125"/></div>
+
+根据事实1，它们代表的是同一个平面、
 
 
-根据事实1，它们代表的是同一个平面
 
-
+#### 总结
 
 线性可分情况下，支持向量机寻找最佳超平面的优化问题可以表示为：
 
 凸优化（Convex Optimization）
 
-（Xi, yi）。。。是已知的
+<div align=center><img src="./images/SVM/Def_15.png" width="392" height="136"/></div>
 
 这是凸优化问题中的二次规划问题
+
+
 
 二次规划的定义：
 
@@ -233,17 +241,17 @@ yi => 协调超平面的左右
 
 （2）限制条件是一次项。
 
-目标函数：
+<div align=center><img src="./images/SVM/Def_16.png" width="516" height="41"/></div>
 
 要么无解，要么只有唯一的最小值。
-
-
 
 在最优化的理论当中，如果一个问题是凸优化问题，我们就会把它当成是一个已经解决的问题，因为凸优化问题只有唯一的一个全局的极值。我们可以应用梯度下降的算法求得它的解。
 
 凸优化问题 => 唯一一个全局极值
 
-凸优化问题的例子
+**凸优化问题的例子**
+
+<div align=center><img src="./images/SVM/Def_17.png" width="402" height="225"/></div>
 
 有很多方法可以寻找全局极小值，但是所有的方法本质都是一样的，就是根据f(w)的梯度不断试探。
 
@@ -255,7 +263,7 @@ yi => 协调超平面的左右
 
 求解凸优化问题是一个专门的课程 => 《凸优化理论》
 
-用凸优化解出的支持向量机最佳分类超平面的例子
+
 
 #### 思考题
 

@@ -377,9 +377,19 @@ C取一个非常大的数，这样将会尽量的迫使所有 delta i 趋近于0
 
 当映射变成五维时
 
-<div align=center><img src="./images/SVM/Def_27.png" width="265" height="37"/></div>
+<div align=center><img src="./images/SVM/Def_27.png" width="374" height="40"/></div>
 
-线性可分
+设
+
+<div align=center><img src="./images/SVM/Def_28.png" width="154" height="104"/></div>
+
+<div align=center><img src="./images/SVM/Def_29.png" width="462" height="89"/></div>
+
+人为指定一个二维到五维的映射，线性不可分 => 线性可分
+
+
+
+**以下定理说明了更一般的结论：**
 
 假设：
 
@@ -387,11 +397,37 @@ C取一个非常大的数，这样将会尽量的迫使所有 delta i 趋近于0
 
 假设：
 
-这些训练样本线性可分的概率维P(M)
-
-当M趋于无穷大时 P(M)=1
+这些训练样本线性可分的概率维P(M)，则有当M趋于无穷大时 P(M)=1
 
 
+
+当我们增加特征空间的维度M时，超平面待估计参数(w, b)的维度也会增加。
+
+也就是说整个算法模型的自由度会增加，当然就更有可能分开低维时候无法分开的数据集。
+
+整个定理告诉我们，将训练样本由低维映射到高维，能增大线性可分的概率。因此，我们如何构造一个由低维到高维的映射，就成为一个关键性的问题。
+
+**假设映射关系已经确定下来**
+
+支持向量即优化问题
+
+<div align=center><img src="./images/SVM/Def_30.png" width="536" height="176"/></div>
+
+以上公式只需要改变一点，变成下列即可：
+
+<div align=center><img src="./images/SVM/Def_31.png" width="536" height="140"/></div>
+
+可以看到在以上优化问题当中
+
+<div align=center><img src="./images/SVM/Def_32.png" width="162" height="33"/></div>
+
+这里还有一个隐含的前提条件，在前一个优化问题当中（这是低维的情况）
+
+<div align=center><img src="./images/SVM/Def_33.png" width="185" height="40"/></div>
+
+而在后一个优化问题当中（这是高维的情况）
+
+<div align=center><img src="./images/SVM/Def_34.png" width="213" height="40"/></div>
 
 
 

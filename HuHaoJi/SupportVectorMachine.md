@@ -303,7 +303,7 @@ VAPNIK给出的回答
 
 （凸优化问题）
 
-<div align=center><img src="./images/SVM/Def_20.png" width="535" height="139"/></div>
+<div align=center><img src="./images/SVM/Def_20.png" width="421" height="139"/></div>
 
 以前的目标函数只需要最小化 w模的平方的1/2 即可。而现在的目标函数增加了一项，所有delta i 的总和。
 
@@ -411,11 +411,11 @@ C取一个非常大的数，这样将会尽量的迫使所有 delta i 趋近于0
 
 支持向量即优化问题
 
-<div align=center><img src="./images/SVM/Def_30.png" width="536" height="176"/></div>
+<div align=center><img src="./images/SVM/Def_30.png" width="421" height="175"/></div>
 
 以上公式只需要改变一点，变成下列即可：
 
-<div align=center><img src="./images/SVM/Def_31.png" width="536" height="140"/></div>
+<div align=center><img src="./images/SVM/Def_31.png" width="434" height="140"/></div>
 
 可以看到在以上优化问题当中
 
@@ -429,9 +429,54 @@ C取一个非常大的数，这样将会尽量的迫使所有 delta i 趋近于0
 
 <div align=center><img src="./images/SVM/Def_34.png" width="213" height="40"/></div>
 
+高维情况下优化问题的解法和低维情况是完全类似的，都可以用凸优化理论完成支持向量机的求解。
+
+**问题**
+
+低维到高维的映射，具体取什么样的形式呢？
 
 
 
+<a name="2.6"></a>
+
+## 2.6 核函数的定义
+
+<div align=center><img src="./images/SVM/Def_35.png" width="434" height="160"/></div>
+
+这一讲中具体研究映射函数的形式，以此为基础，引入核函数（Kernel Function）的概念。
+
+Vapnik：可以不用知道映射函数的具体形式，取而代之，如果对任意两个向量X1和X2，我们知道
+
+<div align=center><img src="./images/SVM/Def_36.png" width="223" height="31"/></div>
+
+那么，我们仍然能够通过一些技巧，获得一个测试样本X的类别信息，从而完成对测试样本类别的预测。
+
+在这里，我们定义K(X1, X2)为核函数（Kernel Function），它是一个实数，因为
+
+<div align=center><img src="./images/SVM/Def_37.png" width="188" height="133"/></div>
+
+举两个例子来说明核函数以及低维到高维的映射函数之间的相互关系。
+
+**假设**：
+
+<div align=center><img src="./images/SVM/Def_38.png" width="57" height="31"/></div>
+
+是一个将二维向量映射为三维向量的映射
+
+<div align=center><img src="./images/SVM/Def_39.png" width="305" height="52"/></div>
+
+我们看一下，与这个映射对应的核函数K的形式。
 
 
 
+假设有两个二维向量
+
+<div align=center><img src="./images/SVM/Def_40.png" width="406" height="144"/></div>
+
+这是一个已知映射函数，求核函数的例子。
+
+
+
+已知核函数K，求映射函数的例子
+
+假设X是一个二维向量

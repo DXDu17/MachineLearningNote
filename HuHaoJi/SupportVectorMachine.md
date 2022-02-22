@@ -455,7 +455,7 @@ Vapnik：可以不用知道映射函数的具体形式，取而代之，如果�
 
 <div align=center><img src="./images/SVM/Def_37.png" width="188" height="133"/></div>
 
-举两个例子来说明核函数以及低维到高维的映射函数之间的相互关系。
+举两个例子来说明核函数以及低维到高维的映射之间的相互关系。
 
 **假设**：
 
@@ -479,4 +479,48 @@ Vapnik：可以不用知道映射函数的具体形式，取而代之，如果�
 
 已知核函数K，求映射函数的例子
 
-假设X是一个二维向量
+**假设**：
+
+X是一个二维向量
+
+<div align=center><img src="./images/SVM/Def_41.png" width="304" height="38"/></div>
+
+假设
+
+<div align=center><img src="./images/SVM/Def_42.png" width="417" height="99"/></div>
+
+假设
+
+<div align=center><img src="./images/SVM/Def_43.png" width="328" height="101"/></div>
+
+K(X1, X2)就是前面那个形式，这个五维向量是可以可以交换顺序的。
+
+这里我们可以看到，核函数K和映射是一一对应的关系，知道其中一个，可以求另外一个。
+
+核函数的形式不能随意的取 => 需要满足一定的条件 => 才能分解为两个映射内积的形式
+
+#### 支持向量机优化问题
+
+Mercer 定理描述如下：
+
+<div align=center><img src="./images/SVM/Def_44.png" width="538" height="136"/></div>
+
+例如：可以证明
+
+<div align=center><img src="./images/SVM/Def_45.png" width="326" height="46"/></div>
+
+满足Mercer's Theorem
+
+<div align=center><img src="./images/SVM/Def_46.png" width="351" height="40"/></div>
+
+但在这个例子当中，映射函数却不能写成显示的表达式。
+
+虽然无法知道映射函数的具体形式，但是却可以通过一些方法知道
+
+<div align=center><img src="./images/SVM/Def_47.png" width="121" height="32"/></div>
+
+的值，进而可以知道一个测试样本x所属的类别。
+
+在这一节中，我们定义了核函数K(X1, X2)，同时指出了它和低维到高维的映射的相互决定关系。
+
+下一节中将具体研究如何在已知K(X1, X2)，而不知道映射函数的情况下 => 求解支持向量机的优化问题

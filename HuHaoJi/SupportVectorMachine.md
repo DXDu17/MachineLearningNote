@@ -539,7 +539,7 @@ Mercer 定理描述如下：
 
 <div align=center><img src="./images/SVM/Def_48.png" width="428" height="106"/></div>
 
-这是一个相当宽泛的定义，我们规定的最优化问题的自变量w，它是一个多为向量，其中目标函数是f(w)。我们假设限制条件中不等式有K个，分别用gi(w) ≤ 0来表示，其中i=1-K。同时我们假设限制条件中等式有m个，分别用hi(w) = 0来表示。
+这是一个相当宽泛的定义，我们规定的最优化问题的自变量w，它是一个多为向量，其中目标函数是f(w)。我们假设限制条件中不等式有K个，分别用gi(w)≤0来表示，其中i=1-K。同时我们假设限制条件中等式有m个，分别用hi(w)=0来表示。
 
 #### 定义该原问题的对偶问题如下
 
@@ -547,9 +547,17 @@ Mercer 定理描述如下：
 
 <div align=center><img src="./images/SVM/Def_49.png" width="472" height="206"/></div>
 
-在定义了函数L(w, α, β)
+在定义了函数L(w, α, β)的基础上，对偶问题如下：
 
+<div align=center><img src="./images/SVM/Def_50.png" width="474" height="92"/></div>
 
+综合原问题和对偶问题的定义得到：
 
+定理一：
 
+<div align=center><img src="./images/SVM/Def_51.png" width="481" height="61"/></div>
+
+证明如下：
+
+<div align=center><img src="./images/SVM/Def_52.png" width="517" height="105"/></div>
 

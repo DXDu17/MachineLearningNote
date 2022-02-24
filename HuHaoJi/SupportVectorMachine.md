@@ -297,7 +297,7 @@ VAPNIK给出的回答
 
 <div align=center><img src="./images/SVM/Def_19.png" width="450" height="121"/></div>
 
-还得加入新的限制阻止每个 delta i 无限的扩大，让它限制在一个合理的范围内。
+还得加入新的限制阻止每个δi无限的扩大，让它限制在一个合理的范围内。
 
 改造后的支持向量机优化版本
 
@@ -305,9 +305,9 @@ VAPNIK给出的回答
 
 <div align=center><img src="./images/SVM/Def_20.png" width="421" height="139"/></div>
 
-以前的目标函数只需要最小化 w模的平方的1/2 即可。而现在的目标函数增加了一项，所有delta i 的总和。
+以前的目标函数只需要最小化 w模的平方的1/2 即可。而现在的目标函数增加了一项，所有δi 的总和。
 
-这就意味着不仅要让w的模越小越好，同时也要让所有 delta i 的和越小越好。
+这就意味着不仅要让w的模越小越好，同时也要让所有 δi 的和越小越好。
 
 比例因子C => 平衡两项
 
@@ -323,7 +323,7 @@ VAPNIK给出的回答
 
 <div align=center><img src="./images/SVM/Def_21.png" width="375" height="123"/></div>
 
-C取一个非常大的数，这样将会尽量的迫使所有 delta i 趋近于0，使得最终解出的超平面和线性可分的情况下保持基本一致。
+C取一个非常大的数，这样将会尽量的迫使所有δi趋近于0，使得最终解出的超平面和线性可分的情况下保持基本一致。
 
 下图是训练数据以及解出的分类面的展示。
 
@@ -561,3 +561,76 @@ Mercer 定理描述如下：
 
 <div align=center><img src="./images/SVM/Def_52.png" width="517" height="105"/></div>
 
+这个问题的解告诉我们，原问题的解总是大于等于对偶问题的解
+
+<div align=center><img src="./images/SVM/Def_53.png" width="162" height="32"/></div>
+
+我们把
+
+<div align=center><img src="./images/SVM/Def_54.png" width="162" height="31"/></div>
+
+定义为对偶差距（Duality Gap）
+
+根据定理一，对偶差距 ≥ 0
+
+#### 强对偶定理（Strong Duality Theorem）
+
+如果g(w) = Aw+b，h(w) = Cx+d，f(w)为凸函数，则有
+
+<div align=center><img src="./images/SVM/Def_55.png" width="162" height="32"/></div>
+
+则对偶差距为0。
+
+简单一点说就是，
+
+如果：原问题的目标函数是凸函数，而限制条件是线性函数，那么原问题的解
+
+<div align=center><img src="./images/SVM/Def_55.png" width="162" height="32"/></div>
+
+对偶差距等于0。
+
+证明过程参看《Convex Optimization》
+
+
+
+假如
+
+<div align=center><img src="./images/SVM/Def_55.png" width="162" height="32"/></div>
+
+成立，有根据定理一推出的不等式，我们可以的得到
+
+<div align=center><img src="./images/SVM/Def_56.png" width="599" height="63"/></div>
+
+#### 总结
+
+- 定义了原问题和对偶问题
+- 强对偶定理
+- KKT条件
+
+
+
+<a name="2.8"></a>
+
+## 2.8 转化为对偶问题
+
+支持向量机的原问题满足强对偶定理
+
+回顾目前支持向量机的优化问题：
+
+<div align=center><img src="./images/SVM/Def_57.png" width="434" height="139"/></div>
+
+为了利用上一讲中，原问题和对偶问题的分析，我们需要对一下问题的版本进行一定的改造
+
+<div align=center><img src="./images/SVM/Def_48.png" width="428" height="106"/></div>
+
+首先注意到，在原问题的描述中，gi(w)是小于等于0的。而在前面支持向量机的限制条件中，两个不等式都是大于等于0的，因此我们首先需要将前面的两个不等式都改成小于等于0的形式。
+
+首先将
+
+<div align=center><img src="./images/SVM/Def_58.png" width="351" height="40"/></div>
+
+由于做了这样的变化，目标函数和第二个限制条件中，所有的δi也要取以前的相反数。
+
+这样就得到，目标函数变为了
+
+<div align=center><img src="./images/SVM/Def_59.png" width="716" height="123"/></div>

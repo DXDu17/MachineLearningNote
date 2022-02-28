@@ -634,3 +634,30 @@ Mercer 定理描述如下：
 这样就得到，目标函数变为了
 
 <div align=center><img src="./images/SVM/Def_59.png" width="716" height="123"/></div>
+
+再整理一下，可以将上述限制条件的第二个不等式也写成小于等于0的形式
+
+<div align=center><img src="./images/SVM/Def_60.png" width="462" height="157"/></div>
+
+这样，就把支持向量机的两个限制条件全写成了小于等于0的形式
+
+我们可以看到这两个条件都是线性的，目标函数是凸的，它满足强对偶定理
+
+用对偶理论求解该问题的对偶问题
+
+上一节中的自变量w => (w, b, δi)
+
+gi(w) ≤ 0 被分成了两部分
+
+一部分是
+
+<div align=center><img src="./images/SVM/Def_61.png" width="153" height="28"/></div>
+
+另一部分是
+
+<div align=center><img src="./images/SVM/Def_62.png" width="343" height="29"/></div>
+
+在这个问题当中，由于没有等式的限制条件，因此不存在上一节中的讲到的hi(w)的情况
+
+按照上一节对偶问题的定义，我们可以将对偶问题写成如下的形式：
+
